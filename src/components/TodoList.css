@@ -1,0 +1,112 @@
+/* General container for the Todo List */
+.todo-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+  }
+  
+  /* Heading for Todo List */
+  .todo-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Style for the unordered list */
+  .todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Each todo item card-like styling */
+  .todo-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .todo-item:hover {
+    background-color: #e6f7ff;
+    transform: translateY(-5px);
+  }
+  
+  /* Number styling (added to the left of each item) */
+  .todo-number {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #007bff;
+    margin-right: 15px;
+    min-width: 30px;
+    text-align: center;
+  }
+  
+  /* Title of the todo item */
+  .todo-title {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #333;
+    flex-grow: 1;
+  }
+  
+  /* Status label for completed or not completed items */
+  .todo-status {
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-transform: capitalize;
+    font-size: 0.9em;
+  }
+  
+  .todo-status.completed {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .todo-status.not-completed {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  /* Loading and error message styling */
+  .loading, .error {
+    text-align: center;
+    font-size: 1.5em;
+    color: #888;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    border: 1px dashed #bbb;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  /* Responsive design for mobile screens */
+  @media (max-width: 768px) {
+    .todo-container {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .todo-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .todo-number {
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+  }
+  
