@@ -137,79 +137,82 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <div className="counter-section">
-        <h2>Click Counter:</h2>
-        <div className="counter">
-          <h1>{count}</h1>
-          <button onClick={handleIncrement}>Increment</button>
-          <button onClick={handleDecrement}>Decrement</button>
-          <button onClick={handleReset}>Reset</button>
+    <div style={{ textAlign: 'center' }}>
+      <h1 style={{ marginBottom: '2rem' }}>Ren Laureanne G. Perandos</h1>
+      <div className="container">
+        <div className="counter-section">
+          <h2>Click Counter:</h2>
+          <div className="counter">
+            <h1>{count}</h1>
+            <button onClick={handleIncrement}>Increment</button>
+            <button onClick={handleDecrement}>Decrement</button>
+            <button onClick={handleReset}>Reset</button>
+          </div>
         </div>
-      </div>
 
-      <div className="calculator-section">
-        <h2>Calculator:</h2>
-        <div className="calculator">
-          <div className="calculator-inputs">
-            {numbers.map((number, index) => (
-              <div key={index} className="input-group">
-                <input
-                  type="number"
-                  value={number}
-                  onChange={(e) => handleNumberChange(index, e.target.value)}
-                  placeholder={`Number ${index + 1}`}
-                  className={hasCalculated && index < numbers.length - 1 ? 'calculated' : ''}
-                  readOnly={hasCalculated && index < numbers.length - 1}
-                />
-                {numbers.length > 2 && (
-                  <button 
-                    className="remove-input" 
-                    onClick={() => handleRemoveInput(index)}
-                    disabled={hasCalculated && index < numbers.length - 1}
-                  >
-                    ×
-                  </button>
-                )}
-              </div>
-            ))}
-            <select 
-              value={operator}
-              onChange={(e) => setOperator(e.target.value)}
-            >
-              <option value="+">+</option>
-              <option value="-">-</option>
-              <option value="*">×</option>
-              <option value="/">÷</option>
-            </select>
-          </div>
-          <div className="calculator-controls">
-            <button className="add-input" onClick={handleAddInput}>
-              Add Input
-            </button>
-          </div>
-          <div className="calculator-buttons">
-            <button onClick={handleCalculate}>=</button>
-            <button onClick={handleClear}>Clear</button>
-          </div>
-          <div className="calculator-result">
-            Result: {result}
-          </div>
-          {solutionHistory.length > 0 && (
-            <div className="calculator-solution-history">
-              <h3>Calculation Steps:</h3>
-              {solutionHistory.map((step, index) => (
-                <div key={index} className="calculator-solution">
-                  Step {index + 1}: {step}
+        <div className="calculator-section">
+          <h2>Calculator:</h2>
+          <div className="calculator">
+            <div className="calculator-inputs">
+              {numbers.map((number, index) => (
+                <div key={index} className="input-group">
+                  <input
+                    type="number"
+                    value={number}
+                    onChange={(e) => handleNumberChange(index, e.target.value)}
+                    placeholder={`Number ${index + 1}`}
+                    className={hasCalculated && index < numbers.length - 1 ? 'calculated' : ''}
+                    readOnly={hasCalculated && index < numbers.length - 1}
+                  />
+                  {numbers.length > 2 && (
+                    <button 
+                      className="remove-input" 
+                      onClick={() => handleRemoveInput(index)}
+                      disabled={hasCalculated && index < numbers.length - 1}
+                    >
+                      ×
+                    </button>
+                  )}
                 </div>
               ))}
+              <select 
+                value={operator}
+                onChange={(e) => setOperator(e.target.value)}
+              >
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
+              </select>
             </div>
-          )}
+            <div className="calculator-controls">
+              <button className="add-input" onClick={handleAddInput}>
+                Add Input
+              </button>
+            </div>
+            <div className="calculator-buttons">
+              <button onClick={handleCalculate}>=</button>
+              <button onClick={handleClear}>Clear</button>
+            </div>
+            <div className="calculator-result">
+              Result: {result}
+            </div>
+            {solutionHistory.length > 0 && (
+              <div className="calculator-solution-history">
+                <h3>Calculation Steps:</h3>
+                {solutionHistory.map((step, index) => (
+                  <div key={index} className="calculator-solution">
+                    Step {index + 1}: {step}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
 
-      <div>
-        <TodoList />    
+        <div>
+          <TodoList />    
+        </div>
       </div>
     </div>
   );
